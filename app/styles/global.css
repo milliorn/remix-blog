@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+body {
+  font-family: \"Poppins\", sans-serif;
+}
+
+p {
+  margin: 10px 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.auth-container .pageHeader {
+  display: block;
+}
+
+.auth-container fieldset label {
+  margin-right: 10px;
+}
+.auth-container fieldset {
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.auth-container h1 {
+  text-align: center;
+}
+
+.auth-container {
+  margin: auto;
+  max-width: 600px;
+}
+
+.btn {
+  background: #000;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: 15px;
+  margin: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.btn-delete {
+  background: darkred;
+  border-color: darkred;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+.btn-reverse {
+  background: #fff;
+  border-color: #000;
+  color: #000;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.container {
+  margin: auto;
+  max-width: 960px;
+  padding: 0 30px;
+  width: 100%;
+}
+
+.error {
+  color: darkred;
+}
+
+.form-control input,
+.form-control textarea {
+  font-size: 17px;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  width: 100%;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control textarea {
+  height: 200px;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: 20px;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: x-large;
+  text-transform: uppercase;
+}
+
+.navbar li {
+  margin-left: 20px;
+}
+
+.navbar ul li a {
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.navbar ul li a:hover {
+  border-bottom: 1px solid #333;
+  color: #333;
+}
+
+.navbar ul {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar {
+  align-items: center;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+}
+
+.page-footer {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.page-header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.posts-list li h3 {
+  margin-bottom: 5px;
+}
+
+.posts-list li {
+  border-radius: 5px;
+  border: 1px #333 solid;
+  padding: 20px;
+}
+
+.posts-list {
+  align-items: flex-start;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: space-between;
+}
