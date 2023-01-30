@@ -1,5 +1,5 @@
 {
-  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/root.jsx", "app/routes/posts.tsx", "app/routes/posts/$postId.tsx"],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "app/root.jsx", "app/routes/posts.tsx", "app/routes/posts/$postId.tsx", "app/routes/posts/index.tsx"],
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2019"],
     "isolatedModules": true,
