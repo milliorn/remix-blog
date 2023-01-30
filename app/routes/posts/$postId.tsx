@@ -1,5 +1,6 @@
 import { useParams } from "@remix-run/react";
 
+// https://reactrouter.com/en/6.8.0/hooks/use-params#useparams
 function Post(): JSX.Element {
   const params = useParams();
 

@@ -1,5 +1,6 @@
 import { Link, useLoaderData } from "@remix-run/react";
 
+// https://remix.run/docs/en/v1/route/loader#loader
 export const loader = () => {
   //console.log(123456789);
   const data = {
@@ -13,6 +14,7 @@ export const loader = () => {
   return data;
 };
 
+// https://remix.run/docs/en/v1/hooks/use-loader-data#useloaderdata
 function PostItems(): JSX.Element {
   const { posts } = useLoaderData();
 

@@ -1,8 +1,10 @@
 import { Outlet, LiveReload, Link, Links, Meta } from "@remix-run/react";
 import globalStylesUrl from "~/styles/global.css";
 
+// https://remix.run/docs/en/v1/guides/accessibility#links
 export const links = () => [{ rel: "stylesheet", href: globalStylesUrl }];
 
+// https://remix.run/docs/en/v1/route/meta#meta
 export const meta = () => {
   const description = "My personal blog";
   const keywords = "remix, react, typescript, node, isbot, eslint";
@@ -23,6 +25,7 @@ export default function App() {
   );
 }
 
+// https://remix.run/docs/en/v1/route/meta#meta
 function Document({ children, title }) {
   return (
     <html lang="en">
