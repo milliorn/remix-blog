@@ -1,14 +1,16 @@
 import { Link, useLoaderData } from "@remix-run/react";
+import { db } from "~/utils/db.server";
 
 // https://remix.run/docs/en/v1/route/loader#loader
-export const loader = () => {
+export const loader = async () => {
   //console.log(123456789);
   const data = {
-    posts: [
-      { id: 1, title: "Post 1", body: "This is a test post" },
-      { id: 2, title: "Post 2", body: "This is a test post" },
-      { id: 3, title: "Post 3", body: "This is a test post" },
-    ],
+    // https://www.prisma.io/docs/reference/api-reference/prisma-client-reference#findmany
+    posts: await db.post.findMany({
+      take: 10,
+      select: { id: true, title: true, createdAt: true },
+      orderBy: { createdAt: "desc" },
+    }),
   };
 
   return data;
@@ -31,6 +33,7 @@ function PostItems(): JSX.Element {
           <li key={post.id}>
             <Link to={post.id}>
               <h3>{post.title}</h3>
+              {new Date(post.createdAt).toLocaleString()}
             </Link>
           </li>
         ))}
