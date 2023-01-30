@@ -47,3 +47,7 @@
 `npx prisma studio`
 
 <http://localhost:5555/>
+
+## PrismaClient
+
+<https://www.prisma.io/docs/concepts/components/prisma-client>
