@@ -61,3 +61,17 @@ function Layout({ children }) {
     </>
   );
 }
+
+// https://remix.run/docs/en/v1/route/error-boundary
+export function ErrorBoundary({ error }) {
+  return (
+    <Document>
+      <Layout>
+        <h1>Error: {typeof error}</h1>
+        <p>{error.message}</p>
+        <p>The stack trace is:</p>
+        <pre>{error.stack}</pre>
+      </Layout>
+    </Document>
+  );
+}

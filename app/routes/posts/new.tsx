@@ -45,15 +45,3 @@ export default function NewPost(): JSX.Element {
     </>
   );
 }
-
-// https://remix.run/docs/en/v1/route/error-boundary
-export function ErrorBoundary({ error }: { error: any }): JSX.Element {
-  return (
-    <div>
-      <h1>Error: {typeof error}</h1>
-      <p>{error.message}</p>
-      <p>The stack trace is:</p>
-      <pre>{error.stack}</pre>
-    </div>
-  );
-}
