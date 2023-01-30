@@ -35,3 +35,15 @@
 <https://www.prisma.io/docs/guides/database/prototyping-schema-db-push#prototyping-a-new-schema>
 
 `npx prisma db push`
+
+### Run seed.js init
+
+`node prisma/seed`
+
+## Prisma Studio
+
+<https://www.prisma.io/docs/concepts/components/prisma-studio>
+
+`npx prisma studio`
+
+<http://localhost:5555/>
