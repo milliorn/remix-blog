@@ -1,6 +1,29 @@
+# Remix.js
 node_modules
 
 /.cache
 /build
 /public/build
 .env
+
+# prisma https://github.com/prisma/prisma-examples/blob/latest/.gitignore
+
+yarn-error.log/
+vendor/
+tmp/
+dist/
+.DS_Store
+.idea
+tmp-resolvers
+package-lock.json
+flow-typed
+yarn.lock
+javascript/**/migrations/
+typescript/**/migrations/
+misc/**/migrations/
+databases/**/migrations/
+experimental/**/*.db
+.next
+.vscode/
+.nuxt
+dev.db

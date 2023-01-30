@@ -149,8 +149,8 @@ ul {
 }
 
 .navbar ul li a:hover {
-  border-bottom: 1px solid #333;
-  color: #333;
+  border-bottom: 1px solid #27272a;
+  color: #27272a;
 }
 
 .navbar ul {
@@ -161,7 +161,7 @@ ul {
 
 .navbar {
   align-items: center;
-  background-color: #f4f4f4;
+  background-color: #f4f4f5;
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -189,7 +189,7 @@ ul {
 
 .posts-list li {
   border-radius: 5px;
-  border: 1px #333 solid;
+  border: 1px #27272a solid;
   padding: 20px;
 }
 
