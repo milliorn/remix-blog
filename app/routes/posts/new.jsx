@@ -1,9 +1,10 @@
-import type { ActionArgs } from "@remix-run/node";
+//import type { ActionArgs } from "@remix-run/node";
 import { redirect } from "@remix-run/node";
 import { Link } from "@remix-run/react";
+import { db } from "~/utils/db.server";
 
 // https://remix.run/docs/en/v1/route/action#action
-export const action = async ({ request }: ActionArgs) => {
+export const action = async ({ request }) => {
   const form = await request.formData();
   const title = form.get("title");
   const body = form.get("body");
@@ -12,11 +13,13 @@ export const action = async ({ request }: ActionArgs) => {
 
   // console.log(fields);
 
+  const post = await db.post.create({ data: fields });
+
   // https://remix.run/docs/en/v1/utils/redirect#redirect
-  return redirect("/posts");
+  return redirect(`/posts/${post.id}`);
 };
 
-export default function NewPost(): JSX.Element {
+export default function NewPost() {
   return (
     <>
       <div className="page-header">
