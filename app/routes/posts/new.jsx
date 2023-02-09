@@ -1,7 +1,19 @@
 //import type { ActionArgs } from "@remix-run/node";
-import { redirect } from "@remix-run/node";
-import { Link } from "@remix-run/react";
+import { json, redirect } from "@remix-run/node";
+import { Link, useActionData } from "@remix-run/react";
 import { db } from "~/utils/db.server";
+
+function validateTitle(title) {
+  if (typeof title !== "string" || title.length < 3) {
+    return "Title must be at least 3 characters";
+  }
+}
+
+function validateBody(body) {
+  if (typeof body !== "string" || body.length < 10) {
+    return "Body must be at least 10 characters";
+  }
+}
 
 // https://remix.run/docs/en/v1/route/action#action
 export const action = async ({ request }) => {
@@ -11,7 +23,13 @@ export const action = async ({ request }) => {
 
   const fields = { title, body };
 
+  const fieldErrors = { title: validateTitle(title), body: validateBody(body) };
   // console.log(fields);
+
+  if (Object.values(fieldErrors).some(Boolean)) {
+    console.log(fieldErrors);
+    return json({ fieldErrors, fields }, { status: 400 });
+  }
 
   const post = await db.post.create({ data: fields });
 
@@ -19,7 +37,10 @@ export const action = async ({ request }) => {
   return redirect(`/posts/${post.id}`);
 };
 
+// https://remix.run/docs/en/v1/hooks/use-action-data#useactiondata
 export default function NewPost() {
+  const actionData = useActionData();
+
   return (
     <>
       <div className="page-header">
@@ -33,12 +54,32 @@ export default function NewPost() {
         <form method="POST">
           <div className="form-control">
             <label htmlFor="title">Title</label>
-            <input type="text" name="title" id="title" />
+            <input
+              type="text"
+              name="title"
+              id="title"
+              defaultValue={actionData?.fields?.title}
+            />
+            <div className="error">
+              <p>
+                {actionData?.fieldErrors?.title &&
+                  actionData?.fieldErrors?.title}
+              </p>
+            </div>
           </div>
 
           <div className="form-control">
             <label htmlFor="body">Post Body</label>
-            <textarea name="body" id="body" />
+            <textarea
+              name="body"
+              id="body"
+              defaultValue={actionData?.fields?.body}
+            />
+            <div className="error">
+              <p>
+                {actionData?.fieldErrors?.body && actionData?.fieldErrors?.body}
+              </p>
+            </div>
           </div>
           <button type="submit" className="btn btn-block">
             Create Post
