@@ -3,12 +3,14 @@ import { json, redirect } from "@remix-run/node";
 import { Link, useActionData } from "@remix-run/react";
 import { db } from "~/utils/db.server";
 
+// validate title in new post
 function validateTitle(title) {
   if (typeof title !== "string" || title.length < 3) {
     return "Title must be at least 3 characters";
   }
 }
 
+// validate text body in new post
 function validateBody(body) {
   if (typeof body !== "string" || body.length < 10) {
     return "Body must be at least 10 characters";
