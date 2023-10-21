@@ -1,5 +1,7 @@
 # Remix Blog
 
+[![CodeQL](https://github.com/milliorn/remix-blog/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/milliorn/remix-blog/actions/workflows/github-code-scanning/codeql)
+
 Remix Blog is a blog application built with Remix, a full-stack JavaScript framework for building modern web applications. It utilizes React for the frontend and Node.js for the backend.
 
 ## Getting Started
